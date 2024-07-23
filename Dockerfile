@@ -25,6 +25,7 @@ RUN apk --update add --virtual build-dependencies python3 build-base && \
     apk del build-dependencies
 
 WORKDIR /data
+RUN npm install puppeteer
 
 EXPOSE $PORT
 
