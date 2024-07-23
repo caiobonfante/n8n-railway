@@ -1,6 +1,6 @@
 FROM node:18.20-alpine
 
-ARG N8N_VERSION=1.50.1
+ARG N8N_VERSION=1.50.2
 
 # Instala as dependências necessárias para n8n e Puppeteer
 RUN apk add --update --no-cache \
