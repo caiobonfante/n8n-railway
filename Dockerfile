@@ -19,13 +19,15 @@ USER root
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
-# Instala n8n e Puppeteer
+# Instala o Puppeteer
+RUN npm install -g puppeteer@22.13.1
+
+# Instala n8n
 RUN apk --update add --virtual build-dependencies python3 build-base && \
-    npm_config_user=root npm install --location=global n8n@${N8N_VERSION} puppeteer && \
+    npm_config_user=root npm install --location=global n8n@${N8N_VERSION} && \
     apk del build-dependencies
 
 WORKDIR /data
-RUN npm install puppeteer
 
 EXPOSE $PORT
 
